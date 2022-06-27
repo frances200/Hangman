@@ -8,7 +8,7 @@ class Word:
 
     
     # Returns a random word from a wordlist
-    def randomize(self, fileName):
+    def randomize(self, fileName) -> str:
         with open(fileName, 'r') as wordlist:
             words = wordlist.readlines()
             word = random.choice(words).strip()
@@ -16,12 +16,12 @@ class Word:
     
 
     # Returns the word
-    def get_word(self):
+    def get_word(self) -> str:
         return self.word
     
 
     # Returns the current state of the word as a string
-    def get_word_dashed(self, guesses):
+    def get_word_dashed(self, guesses) -> str:
         word = []
         for letter in self.word:
             if letter in guesses:

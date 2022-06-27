@@ -15,7 +15,7 @@ class Game:
 
 
     # Returns the introduction to the game
-    def get_introduction(self):
+    def get_introduction(self) -> str:
         introduction_string = [
             "Welcome to Hangman!",
             "Your goal is to guess the word by guessing individual letters.",
@@ -25,7 +25,7 @@ class Game:
 
     
     # Asks the user for a guess and returns the guess
-    def ask_user_guess(self):
+    def ask_user_guess(self) -> str:
         guess = input("Guess a letter (a-z): ")
 
         if not guess.isalpha():
@@ -44,17 +44,17 @@ class Game:
         
     
     # Checks if the guess is correct and returns True or False
-    def check_guess(self, guess):
+    def check_guess(self, guess) -> bool:
         return guess in self.word.get_word()
 
 
     # Clears the screen
-    def clear_screen(self):
+    def clear_screen(self) -> int:
         return os.system('cls' if os.name == 'nt' else 'clear')
 
 
     # The main game loop, which runs until the user either wins or loses
-    def start(self):
+    def start(self) -> None:
         # Introduction
         self.clear_screen()
         print(self.get_introduction())
