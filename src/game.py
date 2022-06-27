@@ -63,7 +63,7 @@ class Game:
         # Main game loop
         guess = self.ask_user_guess()
         while len(self.wrong_guesses) <= Game.MAXLIVES:
-            self.clearScreen()
+            self.clear_screen()
 
             # Check if the guess is correct
             if self.check_guess(guess):
@@ -85,7 +85,7 @@ class Game:
             
             # Print the current state of the game
             print(self.word.get_word_dashed(self.guesses))
-            print(Hangman.get_cuttent_state(self.wrong_guesses))
+            print(Hangman.get_current_state(self.wrong_guesses))
             print(f"Wrong guesses: {', '.join(self.wrong_guesses)}")
 
             guess = self.ask_user_guess()
